@@ -133,14 +133,14 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
 - [x] 5. Checkpoint — Ensure all tests pass
   - Ensure all property tests and unit tests pass, ask the user if questions arise.
 
-- [ ] 6. Implement Holdings Manager
-  - [ ] 6.1 Implement holdings CRUD operations with validation
+- [x] 6. Implement Holdings Manager
+  - [x] 6.1 Implement holdings CRUD operations with validation
     - Implement `add_holding(user_id, symbol, quantity, buy_price) -> Holding` storing to database; raise `ValueError` when symbol is empty or missing, quantity is ≤ 0, or buy_price is ≤ 0
     - Implement `get_holdings(user_id, symbol=None) -> list[Holding]` with optional symbol filter; return an empty list when no holdings exist for the given symbol
     - Implement `set_daily_investment(user_id, amount) -> None` storing to `UserSettingsModel`; raise `ValueError` if amount ≤ 0
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 6.2 Implement cost basis and total quantity computation
+  - [x] 6.2 Implement cost basis and total quantity computation
     - Implement `compute_cost_basis(holdings) -> float` as weighted average: `sum(qty * price) / sum(qty)`; raise `ValueError` for empty holdings list
     - Implement `compute_total_quantity(holdings) -> int` as sum of all quantities
     - _Requirements: 6.1, 6.2, 6.3_
