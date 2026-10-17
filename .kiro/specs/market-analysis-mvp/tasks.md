@@ -27,8 +27,8 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Create `Base` declarative base for all models
     - _Requirements: 10.1, 10.2, 10.3_
 
-- [ ] 3. Implement Fetcher (market hours, data fetching, normalization)
-  - [ ] 3.1 Implement `is_market_active()` pure function
+- [x] 3. Implement Fetcher (market hours, data fetching, normalization)
+  - [x] 3.1 Implement `is_market_active()` pure function
     - Implement `is_market_active(now_utc: datetime | None = None) -> bool` in `fetcher.py`
     - Convert `now_utc` (defaulting to `datetime.utcnow()`) to IST (Asia/Kolkata, UTC+5:30)
     - Return `True` iff weekday is Monday–Friday (weekday() in {0,1,2,3,4}) and IST time is in range 09:15–15:30 inclusive
@@ -41,12 +41,12 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 1: Market hours detection correctness`
     - **Validates: Requirements 1.2, 1.3**
 
-  - [ ] 3.3 Implement DataSource protocol and adapter classes
+  - [x] 3.3 Implement DataSource protocol and adapter classes
     - Define `DataSource` Protocol with `fetch_company(symbol) -> dict` and `is_market_active() -> bool` methods
     - Implement `YFinanceAdapter` and `AlphaVantageAdapter` classes conforming to the protocol
     - _Requirements: 1.1, 1.2, 1.3_
 
-  - [ ] 3.4 Implement normalization, validation, and serialization methods
+  - [x] 3.4 Implement normalization, validation, and serialization methods
     - Implement `normalize(raw_data, api_source) -> NormalizedRecord` as a static method
     - Implement `validate(record) -> bool` returning True iff symbol is a non-empty string, price is strictly positive (> 0), and timestamp is a non-null datetime; when symbol is absent or unparseable, log error with `"[unknown]"` placeholder
     - Implement `serialize(record) -> str` and `deserialize(json_str) -> NormalizedRecord` using JSON
@@ -70,7 +70,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 4: Normalization serialization round-trip`
     - **Validates: Requirements 2.4**
 
-  - [ ] 3.8 Implement retry with exponential backoff and fallback logic
+  - [x] 3.8 Implement retry with exponential backoff and fallback logic
     - Implement retry logic with max 3 retries and exponential backoff: attempt 0 → sleep 1 s, attempt 1 → sleep 2 s, attempt 2 → sleep 4 s (backoff = 2 ** attempt)
     - Implement source fallback: if all retries fail for one source, try the next configured source
     - When all retries across all sources fail for a company, log the error with the company symbol and skip that company; allow the pipeline to continue with remaining companies
