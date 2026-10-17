@@ -163,14 +163,14 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 13: Holdings retrieval invariant`
     - **Validates: Requirements 5.1, 5.2, 5.4**
 
-- [ ] 7. Implement Recommendation Engine
-  - [ ] 7.1 Implement comparison and recommendation generation
+- [x] 7. Implement Recommendation Engine
+  - [x] 7.1 Implement comparison and recommendation generation
     - Implement `compare_holding_to_insight(holding, insight, cost_basis) -> Comparison`
     - Implement `generate_recommendation(holding, insight, cost_basis, current_price) -> Recommendation` applying: BULLISH + current_price < resistance_level → BUY; BEARISH + current_price < cost_basis → SELL; NEUTRAL → HOLD
     - Attach the Compliance_Disclaimer `"Insights only, not financial advice. Educational purpose only."` to every Recommendation
     - _Requirements: 7.1, 7.2, 7.4, 7.5, 7.6, 12.1_
 
-  - [ ] 7.2 Implement quantity, ranges, and target price computation
+  - [x] 7.2 Implement quantity, ranges, and target price computation
     - Implement `compute_suggested_quantity(action, daily_investment, current_price, holding_qty) -> int`: BUY → `floor(daily_investment / current_price)`, SELL → `holding_qty`, HOLD → 0; always non-negative
     - Implement `compute_buy_range(support_level, current_price) -> tuple[float, float]` returning `(support_level, current_price)` where low ≤ high
     - Implement `compute_sell_range(current_price, resistance_level) -> tuple[float, float]` returning `(current_price, resistance_level)` where low ≤ high
@@ -183,7 +183,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 14: Recommendation action matches trend and price conditions`
     - **Validates: Requirements 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 12.1**
 
-  - [ ] 7.4 Implement action plan generation
+  - [x] 7.4 Implement action plan generation
     - Implement `generate_action_plan(recommendations, insights) -> ActionPlan` aggregating buy/sell ranges, target prices, and rebalancing suggestions across all recommendations
     - Include the Compliance_Disclaimer in every ActionPlan
     - Generate rebalancing suggestions based on the aggregate of all Recommendations
