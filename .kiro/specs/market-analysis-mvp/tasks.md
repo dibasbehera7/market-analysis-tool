@@ -130,7 +130,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 10: Insight contains all metrics and trend fields`
     - **Validates: Requirements 4.4**
 
-- [ ] 5. Checkpoint — Ensure all tests pass
+- [x] 5. Checkpoint — Ensure all tests pass
   - Ensure all property tests and unit tests pass, ask the user if questions arise.
 
 - [ ] 6. Implement Holdings Manager
