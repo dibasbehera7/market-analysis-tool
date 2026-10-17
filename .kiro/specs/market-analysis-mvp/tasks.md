@@ -15,14 +15,14 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Configure pytest with hypothesis plugin in `pyproject.toml`
     - _Requirements: (infrastructure setup)_
 
-- [ ] 2. Define core data models
-  - [ ] 2.1 Define enumerations and core data structures as Python dataclasses
+- [x] 2. Define core data models
+  - [x] 2.1 Define enumerations and core data structures as Python dataclasses
     - Define `TrendType` (BULLISH, BEARISH, NEUTRAL) and `ActionType` (BUY, HOLD, SELL) enums
     - Define dataclasses: `NormalizedRecord`, `CompanyFinancials`, `CompanyMetrics`, `Trend`, `Insight`, `Holding`, `Comparison`, `Recommendation`, `ActionPlan`
     - Add `serialize()` and `deserialize()` methods to `NormalizedRecord` for JSON round-trip
     - _Requirements: 2.4, 3.1-3.5, 4.1-4.4, 5.1, 6.1, 7.2, 8.1_
 
-  - [ ] 2.2 Define SQLAlchemy ORM models
+  - [x] 2.2 Define SQLAlchemy ORM models
     - Define `HoldingModel`, `AnalysisResultModel`, `RecommendationModel`, `UserSettingsModel` with proper indexes, foreign keys, and column types
     - Create `Base` declarative base for all models
     - _Requirements: 10.1, 10.2, 10.3_

@@ -19,6 +19,37 @@
         "chatSessionId": "sess_00ca2fe6-eab4-4ab8-9389-c680f488b81f",
         "timestamp": 1792267430118
       }
+    ],
+    "2.1 Define enumerations and core data structures as Python dataclasses": [
+      {
+        "executionId": "eacb1080-86db-4ec4-a034-9a5ef501fb38",
+        "chatSessionId": "sess_81fe2154-1c61-4aa8-abe4-4475836b891a",
+        "timestamp": 1792269456312
+      },
+      {
+        "executionId": "eacb1080-86db-4ec4-a034-9a5ef501fb38",
+        "chatSessionId": "sess_81fe2154-1c61-4aa8-abe4-4475836b891a",
+        "timestamp": 1792269671501
+      }
+    ],
+    "2.2 Define SQLAlchemy ORM models": [
+      {
+        "executionId": "eacb1080-86db-4ec4-a034-9a5ef501fb38",
+        "chatSessionId": "sess_81fe2154-1c61-4aa8-abe4-4475836b891a",
+        "timestamp": 1792269460372
+      },
+      {
+        "executionId": "eacb1080-86db-4ec4-a034-9a5ef501fb38",
+        "chatSessionId": "sess_81fe2154-1c61-4aa8-abe4-4475836b891a",
+        "timestamp": 1792269676105
+      }
+    ],
+    "2. Define core data models": [
+      {
+        "executionId": "eacb1080-86db-4ec4-a034-9a5ef501fb38",
+        "chatSessionId": "sess_81fe2154-1c61-4aa8-abe4-4475836b891a",
+        "timestamp": 1792269676271
+      }
     ]
   }
 }
