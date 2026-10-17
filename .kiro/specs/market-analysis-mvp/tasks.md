@@ -76,8 +76,8 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - When all retries across all sources fail for a company, log the error with the company symbol and skip that company; allow the pipeline to continue with remaining companies
     - _Requirements: 1.4, 1.5_
 
-- [ ] 4. Implement Analyzer (metrics and trend detection)
-  - [ ] 4.1 Implement metric computation functions
+- [x] 4. Implement Analyzer (metrics and trend detection)
+  - [x] 4.1 Implement metric computation functions
     - Implement `compute_pe_ratio(price, eps)`, `compute_pb_ratio(price, book_value)`, `compute_roe(net_income, equity)` — return None for zero or negative denominator
     - Implement `compute_eps_growth(eps_history)` — percentage change `(last - first) / abs(first) * 100` over trailing 4+ quarters; return None if list has fewer than 4 elements or first element is zero
     - Implement `compute_npa(npa_value, total_assets)` — `(npa / total_assets) * 100`; return None if total assets ≤ 0
@@ -101,7 +101,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 7: NPA formula correctness`
     - **Validates: Requirements 3.5**
 
-  - [ ] 4.5 Implement trend detection functions
+  - [x] 4.5 Implement trend detection functions
     - Implement `detect_trend(prices) -> TrendType` using 50/200 SMA crossover: short MA > long MA → BULLISH, short MA < long MA → BEARISH, equal or too-short sequence → NEUTRAL
     - Implement `compute_support_level(prices, period=252)` returning `min(prices[-period:])`, None for empty list
     - Implement `compute_resistance_level(prices, period=252)` returning `max(prices[-period:])`, None for empty list
@@ -119,7 +119,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Tag: `# Feature: market-analysis-mvp, Property 9: Support and resistance bound all prices`
     - **Validates: Requirements 4.2, 4.3**
 
-  - [ ] 4.8 Implement insight generation
+  - [x] 4.8 Implement insight generation
     - Implement `generate_insight(symbol, metrics, trend) -> Insight` combining metrics and trend into a company-level summary
     - Wire the Analyzer pipeline: receive normalized records → compute metrics → detect trend → generate insight
     - _Requirements: 4.4_
