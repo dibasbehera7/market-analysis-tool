@@ -15,6 +15,16 @@ from __future__ import annotations
 
 import os
 from logging.config import fileConfig
+from pathlib import Path
+
+# Load .env from the project root (same directory as alembic.ini) so that
+# DATABASE_URL is available when running `alembic upgrade head` without
+# manually exporting environment variables first.
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+except ImportError:
+    pass  # python-dotenv is optional; fall back to alembic.ini default URL
 
 from sqlalchemy import engine_from_config, pool
 

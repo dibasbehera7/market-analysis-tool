@@ -32,9 +32,22 @@ MARKET_OPEN = time(9, 15)   # 09:15 IST
 MARKET_CLOSE = time(15, 30)  # 15:30 IST
 MARKET_DAYS = {0, 1, 2, 3, 4}  # Monday–Friday (weekday() values)
 
-# NIFTY 500 symbols — abbreviated list for MVP; populated from a static
-# list or fetched dynamically in a real deployment.
-NIFTY500_SYMBOLS: list[str] = []  # populated at runtime / via configuration
+# NIFTY 500 symbols with .NS suffix for Yahoo Finance / yfinance.
+# This is a representative starter list of NIFTY 50 large-caps; extend
+# to the full NIFTY 500 by appending more symbols in the same format.
+NIFTY500_SYMBOLS: list[str] = [
+    # NIFTY 50 blue-chips
+    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS",
+    "HINDUNILVR.NS", "ITC.NS", "SBIN.NS", "BHARTIARTL.NS", "KOTAKBANK.NS",
+    "LT.NS", "AXISBANK.NS", "ASIANPAINT.NS", "MARUTI.NS", "TITAN.NS",
+    "BAJFINANCE.NS", "HCLTECH.NS", "WIPRO.NS", "SUNPHARMA.NS", "ULTRACEMCO.NS",
+    "ONGC.NS", "NTPC.NS", "POWERGRID.NS", "TECHM.NS", "NESTLEIND.NS",
+    "JSWSTEEL.NS", "TATASTEEL.NS", "COALINDIA.NS", "ADANIENT.NS", "ADANIPORTS.NS",
+    "BAJAJ-AUTO.NS", "BAJAJFINSV.NS", "BPCL.NS", "BRITANNIA.NS", "CIPLA.NS",
+    "DIVISLAB.NS", "DRREDDY.NS", "EICHERMOT.NS", "GRASIM.NS", "HDFCLIFE.NS",
+    "HEROMOTOCO.NS", "HINDALCO.NS", "INDUSINDBK.NS", "M&M.NS", "SBILIFE.NS",
+    "SHREECEM.NS", "TATAMOTORS.NS", "TATACONSUM.NS", "UPL.NS", "VEDL.NS",
+]
 
 
 # ---------------------------------------------------------------------------

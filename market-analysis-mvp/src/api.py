@@ -23,7 +23,18 @@ from __future__ import annotations
 import json
 import logging
 from datetime import datetime
+from pathlib import Path
 from typing import Optional
+
+# ---------------------------------------------------------------------------
+# Load .env before anything else so DATABASE_URL and other vars are available
+# when the session module creates its lazy engine on first use.
+# ---------------------------------------------------------------------------
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+except ImportError:
+    pass  # python-dotenv optional; export DATABASE_URL manually if not installed
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import JSONResponse

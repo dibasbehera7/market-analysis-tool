@@ -29,6 +29,14 @@ from __future__ import annotations
 
 import logging
 import os
+from pathlib import Path
+
+# Load .env from the project root before any other imports touch env vars.
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+except ImportError:
+    pass
 
 logging.basicConfig(
     level=logging.INFO,
