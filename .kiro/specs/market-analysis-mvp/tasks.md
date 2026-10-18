@@ -219,7 +219,7 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Implement `run_pipeline()` executing fetch → analyze → recommend in sequence; log and skip individual company failures without stopping the run
     - _Requirements: 11.1, 11.2_
 
-- [ ] 12. Checkpoint — Ensure all tests pass
+- [x] 12. Checkpoint — Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 13. Integration and wiring
