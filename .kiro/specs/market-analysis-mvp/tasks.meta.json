@@ -335,6 +335,25 @@
         "chatSessionId": "sess_661f972e-0253-4438-9131-3519975916e2",
         "timestamp": 1792339818930
       }
+    ],
+    "13.1 Wire all components together in the pipeline": [
+      {
+        "executionId": "cf2b075b-fbe0-4d8c-a407-b4c2bed0ce3f",
+        "chatSessionId": "sess_ba82b3ac-1469-464b-b07f-126c88b5c37d",
+        "timestamp": 1792339888259
+      },
+      {
+        "executionId": "cf2b075b-fbe0-4d8c-a407-b4c2bed0ce3f",
+        "chatSessionId": "sess_ba82b3ac-1469-464b-b07f-126c88b5c37d",
+        "timestamp": 1792340024961
+      }
+    ],
+    "13. Integration and wiring": [
+      {
+        "executionId": "cf2b075b-fbe0-4d8c-a407-b4c2bed0ce3f",
+        "chatSessionId": "sess_ba82b3ac-1469-464b-b07f-126c88b5c37d",
+        "timestamp": 1792340025314
+      }
     ]
   }
 }

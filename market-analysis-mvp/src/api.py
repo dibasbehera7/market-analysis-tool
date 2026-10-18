@@ -267,19 +267,27 @@ async def submit_holding(
 
     Requirements: 9.1, 9.4
     """
-    # Use a synchronous-style HoldingsManager backed by the async session.
-    # The session's flush() call is sync-compatible in SQLAlchemy 2 "sync
-    # within async" mode when the calling code is already awaited at the
-    # transaction boundary (commit/rollback handled by get_db dependency).
-    manager = HoldingsManager(db)  # type: ignore[arg-type]
+    # HoldingsManager uses the synchronous SQLAlchemy Session API (add,
+    # flush, query).  AsyncSession exposes these as sync methods too (add,
+    # flush are sync; query is absent but we avoid it here).  We use
+    # run_sync to execute the blocking HoldingsManager code inside the
+    # async endpoint safely.
+    user_id = request.user_id
+    symbol = request.symbol
+    quantity = request.quantity
+    buy_price = request.buy_price
+
+    def _add(sync_session):  # type: ignore[no-untyped-def]
+        manager = HoldingsManager(sync_session)
+        return manager.add_holding(
+            user_id=user_id,
+            symbol=symbol,
+            quantity=quantity,
+            buy_price=buy_price,
+        )
 
     try:
-        holding: Holding = manager.add_holding(
-            user_id=request.user_id,
-            symbol=request.symbol,
-            quantity=request.quantity,
-            buy_price=request.buy_price,
-        )
+        holding: Holding = await db.run_sync(_add)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
