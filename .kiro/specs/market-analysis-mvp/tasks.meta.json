@@ -280,6 +280,30 @@
         "chatSessionId": "sess_f68ecae5-9228-4d94-ba75-e566b6bf9b0b",
         "timestamp": 1792337131850
       }
+    ],
+    "10.1 Define Pydantic schemas and implement API endpoints": [
+      {
+        "executionId": "f59c7a2a-dea5-49b1-af6c-1cdb3adad82d",
+        "chatSessionId": "sess_d7e8d745-ea31-4ab2-ac71-e18b5d65ac5c",
+        "timestamp": 1792337748655
+      },
+      {
+        "executionId": "c66cc138-774a-4762-98b6-4833ce4806fa",
+        "chatSessionId": "sess_aeda8ebc-aeea-46ba-a743-165c42359a74",
+        "timestamp": 1792338040005
+      },
+      {
+        "executionId": "c66cc138-774a-4762-98b6-4833ce4806fa",
+        "chatSessionId": "sess_aeda8ebc-aeea-46ba-a743-165c42359a74",
+        "timestamp": 1792338524627
+      }
+    ],
+    "10. Implement FastAPI REST API": [
+      {
+        "executionId": "c66cc138-774a-4762-98b6-4833ce4806fa",
+        "chatSessionId": "sess_aeda8ebc-aeea-46ba-a743-165c42359a74",
+        "timestamp": 1792338524917
+      }
     ]
   }
 }

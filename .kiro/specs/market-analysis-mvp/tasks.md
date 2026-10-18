@@ -204,8 +204,8 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Initialize Alembic for migration management; generate initial migration for all ORM models
     - _Requirements: 10.1, 10.2, 10.3_
 
-- [ ] 10. Implement FastAPI REST API
-  - [ ] 10.1 Define Pydantic schemas and implement API endpoints
+- [x] 10. Implement FastAPI REST API
+  - [x] 10.1 Define Pydantic schemas and implement API endpoints
     - Define `HoldingRequest` with Pydantic validators enforcing: symbol is non-empty string, quantity > 0, buy_price > 0
     - Define `HoldingResponse`, `InsightResponse`, `ActionPlanResponse` Pydantic schemas
     - Implement `POST /holdings` endpoint calling `HoldingsManager.add_holding`; return HTTP 201 on success, HTTP 400 with descriptive message on `ValueError` or Pydantic validation failure
