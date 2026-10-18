@@ -213,8 +213,8 @@ The technology stack is Python 3.11+ with FastAPI, SQLAlchemy 2.0, APScheduler, 
     - Implement `GET /recommendations` endpoint returning personalized recommendations and action plan for a given user_id
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 11. Implement Scheduler and pipeline
-  - [ ] 11.1 Implement AnalysisScheduler with 12-hour interval and pipeline
+- [x] 11. Implement Scheduler and pipeline
+  - [x] 11.1 Implement AnalysisScheduler with 12-hour interval and pipeline
     - Implement `start()` configuring APScheduler with a 12-hour interval trigger
     - Implement `run_pipeline()` executing fetch → analyze → recommend in sequence; log and skip individual company failures without stopping the run
     - _Requirements: 11.1, 11.2_
